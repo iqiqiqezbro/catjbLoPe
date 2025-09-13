@@ -1,3 +1,13 @@
+function Notify(Title1, Text1, Icon1, Time1)
+  game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = Title1,
+    Text = Text1,
+    Icon = lcon1,
+    Duration = Time1,
+  })
+end
+Notify("猫帝脚本", "祝你玩的愉快", "rbxassetid://89234940088127", 3)
+Notify("禁止倒卖", "倒卖死全家", "rbxassetid://89234940088127", 3)
 print("猫帝帮你开启了反挂机")
 		local vu = game:GetService("VirtualUser")
 		game:GetService("Players").LocalPlayer.Idled:connect(function()
