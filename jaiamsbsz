@@ -36,6 +36,7 @@ local Tab5 = Window:CreateTab("doors")
 local Tab6 = Window:CreateTab("墨水游戏")
 local Tab7 = Window:CreateTab("范围")
 local Tab8 = Window:CreateTab("忍者传奇")
+local Tab9 = Window:CreateTab("小心地雷")
 
 
 local ToggleExample = Tab1:CreateToggle({
@@ -398,5 +399,35 @@ local args = {
 game:GetService("Players").LocalPlayer:WaitForChild("ninjaEvent"):FireServer(unpack(args))
 wait(0.1)
 end
+    end,
+})
+
+
+local ButtonExample = Tab9:CreateButton({
+    Name = "传送到终点",
+    Callback = function()
+        print("按钮被点击了!")
+        local player = game.Players.LocalPlayer
+        local character = player.Character or player.CharacterAdded:Wait()
+        local hrp = character:WaitForChild("HumanoidRootPart")
+
+        local targetPosition = Vector3.new(224.38,3.50,3.51)
+
+        hrp.CFrame = CFrame.new(targetPosition)
+    end,
+})
+
+
+local ButtonExample = Tab9:CreateButton({
+    Name = "死亡",
+    Callback = function()
+        print("按钮被点击了!")
+        local player = game.Players.LocalPlayer
+        local character = player.Character or player.CharacterAdded:Wait()
+        local hrp = character:WaitForChild("HumanoidRootPart")
+
+        local targetPosition = Vector3.new(87.72,-123.05,1.19)
+
+        hrp.CFrame = CFrame.new(targetPosition)
     end,
 })
